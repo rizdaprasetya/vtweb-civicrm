@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension key="com.veritrans.payment.vtweb" type="module">
+  <file>vtweb</file>
+  <name>Veritrans</name>
+  <description>Veritrans Payment Gateway</description>
+  <urls>
+    <url desc="Main Extension Page">https://docs.veritrans.co.id/</url>
+    <url desc="Documentation">https://docs.veritrans.co.id</url>
+    <url desc="Support">support@veritrans.co.id</url>
+  </urls>
+  <license>AGPL</license>
+  <maintainer>
+    <author>Rizda Dwi Prasetya</author>
+    <email>rizda.prasetya@veritrans.co.id</email>
+  </maintainer>
+  <releaseDate>2016-08-01</releaseDate>
+  <version>1.0.0</version>
+  <develStage>stable</develStage>
+  <compatibility>
+    <ver>4.4</ver>
+    <ver>4.5</ver>
+  </compatibility>
+  <comments>https://docs.veritrans.co.id</comments>
+  <typeInfo>
+   <userNameLabel>ServerKey</userNameLabel>
+   <passwordLabel></passwordLabel>
+   <signatureLabel></signatureLabel>
+   <subjectLabel></subjectLabel>
+   <urlSiteDefault>https://www.veritrans.co.id</urlSiteDefault>
+   <urlApiDefault></urlApiDefault>
+   <urlRecurDefault></urlRecurDefault>
+   <urlSiteTestDefault>https://test.example.com</urlSiteTestDefault>
+   <urlApiTestDefault></urlApiTestDefault>
+   <urlRecurTestDefault></urlRecurTestDefault>
+   <urlButtonDefault></urlButtonDefault>
+   <urlButtonTestDefault></urlButtonTestDefault>
+   <billingMode>notify</billingMode>
+   <isRecur>0</isRecur>
+   <paymentType>4</paymentType>
+  </typeInfo>
+</extension>
