@@ -30,7 +30,7 @@ Payment Method Feature:
 #### Configuration
 1. Go to menu **Administer > System Settings > Payment Processors**, click **Add Payment Processor** :
   * Select **Payment Processor Type** : `Veritrans`
-  * Fill **Name ** with text button that you want to display to customer
+  * Fill **Name** with text button that you want to display to customer
   * Tick/Enable **Is this Payment Processor active?**
   * Fill in the **serverKey** for Live Payments with your corresonding [Veritrans&nbsp; account](https://my.veritrans.co.id/) Server key for Production Mode
   * Fill in the **serverKey** for Test Payments with your corresonding [Veritrans&nbsp; account](https://my.veritrans.co.id/) Server key for Sandbox Mode
@@ -38,7 +38,7 @@ Payment Method Feature:
   * Other configuration are optional, you may configure according to your needs.
   * Click **Save**
 2. Now click **Edit** on the newly created Veritrans Payment Processor
-3. Look at the URL, will be something like this `../admin.php?page=CiviCRM&q=civicrm%2Fadmin%2FpaymentProcessor&action=update&id=17&reset=1`, take note on the IDnumber on `&id=xx`, this IDnumber will be used for next step.
+3. On this Veritrans Payment Processor page look at the browser URL, will be something like this `../admin.php?page=CiviCRM&q=civicrm%2Fadmin%2FpaymentProcessor&action=update&id=17&reset=1`, take note on the IDnumber on `&id=xx`, this IDnumber will be used for next step.
 
 ### Veritrans&nbsp; MAP Configuration
 
@@ -46,7 +46,7 @@ Payment Method Feature:
   * Insert `http://[your web url to CiviCRM]/?page=CiviCRM&q=civicrm/payment/ipn/[IDnumber]` as your Payment Notification URL. Replace `[IDnumber]` with the IDnumber we got previously. For example: `http://myweb.com/civicrm/?page=CiviCRM&q=civicrm/payment/ipn/17`
   * Insert `http://[your web url to CiviCRM]` link as Finish/Unfinish/Error Redirect URL.
 
-#### Get help
+### Get help
 
 * [vtweb-civicrm Wiki](https://github.com/veritrans/vtweb-civicrm)
 * [Veritrans registration](https://my.veritrans.co.id/register)
