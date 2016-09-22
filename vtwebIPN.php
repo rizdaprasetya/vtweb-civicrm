@@ -279,11 +279,10 @@ class com_veritrans_payment_vtwebIPN extends CRM_Core_Payment_BaseIPN {
       else {
         $notification = $this->_notification_obj; // TODO implement get status instead of extracting raw notif obj
 
-        error_log("notification object : ".print_r($notification,true)); // debug
+        // error_log("notification object : ".print_r($notification,true)); // debug
 
         // Get cached txn details array from cache DB
         $vtCache = CRM_Core_BAO_Cache::getItem('com.veritrans.payment.vtweb',"Veritrans_orderID_{$notification->order_id}", null);
-        // CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$veritrans_orderId}"); // TODO when to clear cache (settlement, expire)
 
         // check signature key to determine if this is a valid Veritrans notification sent by Veritrans
         if ( hash('sha512', $notification->order_id.$notification->status_code.$notification->gross_amount.$vtCache['user_name'])!=$notification->signature_key ){
@@ -313,20 +312,19 @@ class com_veritrans_payment_vtwebIPN extends CRM_Core_Payment_BaseIPN {
         $privateData['paymentProcessorID'] = $this->_paymentProcessor['id']; // additonal
         $amount                            = $notification->gross_amount;
 
-        error_log("private data array : ".print_r($privateData,true)); // debug
+        // error_log("private data array : ".print_r($privateData,true)); // debug
        
         list($mode, $component, $paymentProcessorID, $duplicateTransaction) = self::getContext($privateData);
         $mode = $mode ? 'test' : 'live';
        
-        error_log("_paymentProcessor['id'] : ".$this->_paymentProcessor['id']); // debug
+        // error_log("_paymentProcessor['id'] : ".$this->_paymentProcessor['id']); // debug
         
         $paymentProcessor = CRM_Financial_BAO_PaymentProcessor::getPayment($this->_paymentProcessor['id'], $mode);
         $ipn=& self::singleton( $mode, $component, $paymentProcessor );
        
-        $success = TRUE; // TODO set with real value
         if ($duplicateTransaction == 0) {
 
-          // TODO implement notification check logic
+          // notification check logic
           if ($notification->transaction_status == 'capture') {
             if ($notification->fraud_status == 'accept') {
               $this->newOrderNotify("success", $privateData, $component, $amount, $privateData['invoiceID']); // Process the transaction.

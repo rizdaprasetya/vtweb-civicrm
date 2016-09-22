@@ -1,4 +1,29 @@
 <?php
+/**
+ * ### Veritrans Payment Plugin for CiviCRM ###
+ *
+ * This plugin allow your CiviCRM to accept payment from customer using Veritrans Payment Gateway solution.
+ *
+ * @category   CiviCRM Payment Plugin
+ * @author     Rizda Dwi Prasetya <rizda.prasetya@veritrans.co.id>
+ * @version    1.0
+ * @link       http://docs.veritrans.co.id
+ * (This plugin is made based on Payment Plugin Template by CiviCRM)
+ *
+ * LICENSE: This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
 
 // require_once(dirname(__FILE__).'../../../../plugins/civicrm/civicrm/CRM/Core/Payment.php');
 require_once('CRM/Core/Payment.php');
@@ -161,7 +186,7 @@ class com_veritrans_payment_vtweb extends CRM_Core_Payment
         $veritrans                      = new Veritrans_Config();
         Veritrans_Config::$serverKey    = $VeritransServerKey;
         Veritrans_Config::$isProduction = !$this->_paymentProcessor['is_test'];
-        Veritrans_Config::$isProduction = false; // TODO remove this
+        // Veritrans_Config::$isProduction = false; // TODO remove this
         Veritrans_Config::$is3ds        = true;
         Veritrans_Config::$isSanitized  = true;
         
@@ -212,7 +237,7 @@ class com_veritrans_payment_vtweb extends CRM_Core_Payment
             'customer_details' => $params_customer_details
         );
 
-        error_log("CiviCRM params : ".print_r($params,true)); // debug
+        // error_log("CiviCRM params : ".print_r($params,true)); // debug
         // error_log("VT params : ".print_r($params_all,true)); // debug
 
         // request redirection URL
@@ -221,8 +246,8 @@ class com_veritrans_payment_vtweb extends CRM_Core_Payment
         // Redirect the user to the payment url.
         CRM_Utils_System::redirect($vtwebUrl);
         exit();
-        // TODO implement notif URL handler ( http://localhost/wp/civicrm/?page=CiviCRM&q=civicrm/payment/ipn/11& ) 
-        // TODO Get the static notif URL handler
+        // notif URL handler ( http://localhost/wp/civicrm/?page=CiviCRM&q=civicrm/payment/ipn/11& ) 
+        // TODO Get the static notif URL handler? is it possible?
     }
 
     public function handlePaymentNotification() {
