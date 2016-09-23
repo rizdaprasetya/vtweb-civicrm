@@ -29,9 +29,9 @@
 require_once('CRM/Core/Payment.php');
 
 // Import Veritrans Library TODO activate this!
-// require_once(dirname(__FILE__) . '/veritrans/Veritrans.php');
-// require_once(dirname(__FILE__) . '/veritrans/Veritrans/Notification.php');
-// require_once(dirname(__FILE__) . '/veritrans/Veritrans/Transaction.php');
+require_once(dirname(__FILE__) . '/veritrans/Veritrans.php');
+require_once(dirname(__FILE__) . '/veritrans/Veritrans/Notification.php');
+require_once(dirname(__FILE__) . '/veritrans/Veritrans/Transaction.php');
 
 class com_veritrans_payment_vtweb extends CRM_Core_Payment
 {
