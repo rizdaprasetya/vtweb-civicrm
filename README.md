@@ -25,7 +25,7 @@ Payment Method Feature:
 2. Extract the plugin, then rename the folder modules as **com.veritrans.payment.vtweb**
 2. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your CiviCRM extension directory `/civicrm/ext`. For example, in WordPress is `[Wordpress Directory]/wp-content/uploads/civicrm/ext`. More on: [how to install CiviCRM extension](https://wiki.civicrm.org/confluence/display/CRMDOC/Extensions).
 3. Go to CiviCRM admin panel, activate the plugin from menu **Administer > System Settings > Manage Extensions**.
-4. Install and Enable the Veritrans extension.
+4. Click **Refresh**, wait until Veritrans plugin appear, then Install and Enable the Veritrans extension.
 
 #### Configuration
 1. Go to menu **Administer > System Settings > Payment Processors**, click **Add Payment Processor** :
