@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension key="com.veritrans.payment.vtweb" type="module">
+<extension key="com.veritrans.payment.vtweb" type="payment">
   <file>vtweb</file>
   <name>Veritrans</name>
   <description>Veritrans Payment Gateway</description>
