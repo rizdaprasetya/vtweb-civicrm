@@ -339,19 +339,19 @@ class com_veritrans_payment_vtwebIPN extends CRM_Core_Payment_BaseIPN {
           else if ($notification->transaction_status == 'cancel') {
             // update to fail
             $this->newOrderNotify("fail", $privateData, $component, $amount, $privateData['invoiceID']); // Process the transaction.
-            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$veritrans_orderId}"); // delete from cache table
+            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$notification->order_id}"); // delete from cache table
             echo $notification->transaction_status." notification received for order_id: ".$privateData['invoiceID'];
           }
           else if ($notification->transaction_status == 'expire') {
             // update to fail
             $this->newOrderNotify("fail", $privateData, $component, $amount, $privateData['invoiceID']); // Process the transaction.
-            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$veritrans_orderId}"); // delete from cache table
+            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$notification->order_id}"); // delete from cache table
             echo $notification->transaction_status." notification received for order_id: ".$privateData['invoiceID'];
           }
           else if ($notification->transaction_status == 'deny') {
             // update to fail
             $this->newOrderNotify("fail", $privateData, $component, $amount, $privateData['invoiceID']); // Process the transaction.
-            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$veritrans_orderId}"); // delete from cache table
+            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$notification->order_id}"); // delete from cache table
             echo $notification->transaction_status." notification received for order_id: ".$privateData['invoiceID'];
           }
           else if ($notification->transaction_status == 'settlement') {
@@ -360,7 +360,7 @@ class com_veritrans_payment_vtwebIPN extends CRM_Core_Payment_BaseIPN {
             } else{
               // delete from cache table
             }
-            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$veritrans_orderId}"); // delete from cache table
+            CRM_Core_BAO_Cache::deleteGroup(NULL,"Veritrans_orderID_{$notification->order_id}"); // delete from cache table
             echo $notification->transaction_status." notification received for order_id: ".$privateData['invoiceID'];
           }
           else if ($notification->transaction_status == 'pending') {
