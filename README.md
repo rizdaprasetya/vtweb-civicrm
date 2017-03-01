@@ -27,8 +27,8 @@ Payment Method Feature:
 3. Go to CiviCRM admin panel, activate the plugin from menu **Administer > System Settings > Manage Extensions**.
 4. Click **Refresh**, wait until Veritrans plugin appear, then Install and Enable the Veritrans extension.
 5. Go to plugin folder (.../civicrm/ext/com.veritrans.payment.vtweb), edit `info.xml` change on line 2:
-6. On Veritrans plugin, Click **Disable**, click **Disable** on confirmation page, Click **Uninstall**. After you are sure the plugin is unistalled,
 `type="payment"` to `type="module"`
+6. On Veritrans plugin, Click **Disable**, click **Disable** on confirmation page, Click **Uninstall**. After you are sure the plugin is unistalled,
 7. Click **Refresh**, wait until Veritrans plugin appear, then Install and Enable the Veritrans extension once again.
 
 #### Configuration
